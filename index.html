@@ -3,98 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Plataforma de difusión para ferias, jornadas y congresos institucionales.">
-    <title>Evento Institucional - Plataforma de Difusión</title>
+    <meta name="description" content="Plataforma institucional para la socialización de ferias, jornadas y congresos.">
+    <title>Congreso Anual de Innovación - Evento Institucional</title>
 </head>
 <body>
-
+    #Header con título del evento, institución organizadora y menú de navegación
     <header>
-        <h1>Congreso de Tecnología e Innovación</h1>
+        <h1>Congreso Anual de Innovación Tecnológica 2026</h1>
+        <p>Universidad de Talca - Facultad de Economía y Negocios</p>
         <nav>
             <ul>
                 <li><a href="#agenda">Agenda de Actividades</a></li>
-                <li><a href="#expositores">Perfil de Expositores</a></li>
+                <li><a href="#ponentes">Perfil de Expositores</a></li>
                 <li><a href="#inscripcion">Formulario de Inscripción</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        
+        #Sección de agenda con detalles de las actividades programadas, incluyendo fechas, horarios y lugares
         <section id="agenda">
             <h2>Agenda de Actividades</h2>
             <article>
-                <h3>Día 1: Charla Inaugural</h3>
-                <p>Horario: 09:00 - 11:00</p>
-                <p>Tema: El impacto de las nuevas tecnologías web.</p>
+                <h3>Jornada 1: El futuro de la Web</h3>
+                <p><strong>Fecha:</strong> 15 de Octubre, 09:00 - 13:00 hrs.</p>
+                <p><strong>Lugar:</strong> Auditorio Principal</p>
+                <p>Apertura del congreso con charlas sobre nuevas tecnologías y adaptabilidad web.</p>
             </article>
             <article>
-                <h3>Día 2: Talleres Prácticos</h3>
-                <p>Horario: 10:00 - 13:00</p>
-                <p>Tema: Accesibilidad y Semántica en HTML5.</p>
+                <h3>Jornada 2: Taller Práctico HTML5</h3>
+                <p><strong>Fecha:</strong> 16 de Octubre, 10:00 - 14:00 hrs.</p>
+                <p><strong>Lugar:</strong> Laboratorio de Computación A</p>
+                <p>Taller enfocado en el diseño estructural usando semántica y accesibilidad.</p>
             </article>
         </section>
-
-        <section id="expositores">
-            <h2>Perfil de Expositores</h2>
+        #Sección de perfil de expositores y ponentes con fotografías, nombres, títulos y áreas de especialización
+        <section id="ponentes">
+            <h2>Perfil de Expositores y Ponentes</h2>
             <aside>
-                <img src="expositor1.jpg" alt="Foto de perfil del ponente Juan Pérez">
-                <h3>Juan Pérez</h3>
-                <p>Especialista en desarrollo backend y sistemas.</p>
+                <img src="img/juan_perez.jpg" alt="Fotografía del expositor Jerman Espíndola, experto en aplicaciones web">
+                <h3>MSc. Jerman Espíndola</h3>
+                <p>Especialista en Desarrollo de Aplicaciones Web y Ciencias de la Computación.</p>
             </aside>
             <aside>
-                <img src="expositor2.jpg" alt="Foto de perfil de la ponente Ana López">
-                <h3>Ana López</h3>
-                <p>Diseñadora UX/UI con amplia experiencia en interfaces web.</p>
+                <img src="img/maria_gomez.jpg" alt="Fotografía de la expositora María Gómez, ingeniera informática">
+                <h3>Ing. María Gómez</h3>
+                <p>Experta en usabilidad, accesibilidad y experiencia de usuario (UX).</p>
             </aside>
         </section>
-
+        #Sección de formulario de inscripción con campos para nombre, correo electrónico, edad, rol de participación y un área de texto para comentarios adicionales
         <section id="inscripcion">
             <h2>Inscripción al Evento</h2>
-            
-            <form action="procesar.php" method="POST">
+            <p>Complete el siguiente formulario para participar en la feria.</p>
+            #El formulario incluye validación de campos, como formato de correo electrónico, rango de edad permitido y campos obligatorios
+            <form action="/procesar_inscripcion.php" method="POST">
                 
                 <div>
-                    <label for="nombre_completo">Nombre Completo:</label>
-                    <input type="text" id="nombre_completo" name="nombre" required pattern="[A-Za-zÁ-Úá-úñÑ\s]+" title="Solo ingrese letras">
+                    <label for="nombre">Nombre Completo:</label>
+                    <input type="text" id="nombre" name="nombre" required pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+" title="Solo se permiten letras y espacios">
                 </div>
 
                 <div>
-                    <label for="correo">Correo Electrónico:</label>
-                    <input type="email" id="correo" name="correo" required>
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" required>
                 </div>
 
                 <div>
                     <label for="edad">Edad:</label>
-                    <input type="number" id="edad" name="edad" min="18" max="100" required>
+                    <input type="number" id="edad" name="edad" min="18" max="99" required>
                 </div>
 
                 <div>
-                    <label for="rol_participacion">Rol en el evento:</label>
-                    <select id="rol_participacion" name="rol" required>
-                        <option value="">-- Seleccione su rol --</option>
+                    <label for="rol">Rol de Participación:</label>
+                    <select id="rol" name="rol" required>
+                        <option value="">Seleccione su rol...</option>
                         <option value="visitante">Visitante</option>
                         <option value="expositor">Expositor</option>
                     </select>
                 </div>
 
                 <div>
-                    <label for="comentario">Motivación para asistir:</label>
-                    <textarea id="comentario" name="comentario" rows="4" placeholder="Escribe aquí el motivo de tu participación..."></textarea>
+                    <label for="comentarios">Motivo de su participación / Temática si es expositor:</label>
+                    <textarea id="comentarios" name="comentarios" rows="4" cols="40" placeholder="Escriba aquí sus comentarios..."></textarea>
                 </div>
 
                 <div>
-                    <button type="submit">Enviar Registro</button>
+                    <button type="submit">Enviar Inscripción</button>
                     <button type="reset">Limpiar Formulario</button>
                 </div>
             </form>
         </section>
 
     </main>
-
+    #Footer con información de contacto, derechos de autor y enlaces a redes sociales de la institución
     <footer>
-        <p>&copy; 2026 Facultad de Economía y Negocios - Universidad de Talca.</p>
-        <p>Contacto: eventos@institucion.cl</p>
+        <p>&copy; 2026 Universidad de Talca - Ingeniería en Informática Empresarial.</p>
+        <p>Contacto: soporte.eventos@institucion.cl</p>
     </footer>
 
 </body>
