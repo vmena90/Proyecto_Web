@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Plataforma institucional para la socialización de ferias, jornadas y congresos.">
     <title>Congreso Anual de Innovación - Evento Institucional</title>
+    <link rel="stylesheet" href="styles.css">
+    script src="script.js" defer></script>
 </head>
 <body>
     <!-- Header con título del evento, institución organizadora y menú de navegación -->
@@ -12,10 +14,10 @@
         <h1>Congreso Anual de Innovación Tecnológica 2026</h1>
         <p>Universidad de Talca - Facultad de Economía y Negocios</p>
         <nav>
-            <ul>
-                <li><a href="#agenda">Agenda de Actividades</a></li>
-                <li><a href="#ponentes">Perfil de Expositores</a></li>
-                <li><a href="#inscripcion">Formulario de Inscripción</a></li>
+            <ul class="menu-navegacion">
+                <li><a class="enlace-nav" href="#agenda">Agenda de Actividades</a></li>
+                <li><a class="enlace-nav" href="#expositores">Perfil de Expositores</a></li>
+                <li><a class="enlace-nav" href="#inscripcion">Formulario de Inscripción</a></li>
             </ul>
         </nav>
     </header>
@@ -24,7 +26,7 @@
         <!-- Sección de agenda con detalles de las actividades programadas, incluyendo fechas, horarios y lugares -->
         <section id="agenda">
             <h2>Agenda de Actividades</h2>
-            <article>
+            <article class="jornada">
                 <h3>Jornada 1: El futuro de la Web</h3>
                 <p><strong>Fecha:</strong> 15 de Octubre, 09:00 - 13:00 hrs.</p>
                 <p><strong>Lugar:</strong> Auditorio Principal</p>
@@ -37,16 +39,16 @@
                 <p>Taller enfocado en el diseño estructural usando semántica y accesibilidad.</p>
             </article>
         </section>
-        <!-- Sección de perfil de expositores y ponentes con fotografías, nombres, títulos y áreas de especialización -->
-        <section id="ponentes">
-            <h2>Perfil de Expositores y Ponentes</h2>
-            <aside>
-                <img src="img/juan_perez.jpg" alt="Fotografía del expositor Juan Perez experto en aplicaciones web">
+        <!-- Sección de perfil de expositores con fotografías, nombres, títulos y áreas de especialización -->
+        <section id="expositores">
+            <h2>Perfil de Expositores</h2>
+            <aside class="tarjeta-expositor">
+                <img class="foto-expositor" src="https://media.istockphoto.com/id/1399565382/es/foto/joven-empresario-mestizo-feliz-de-pie-con-los-brazos-cruzados-trabajando-solo-en-una-oficina.jpg?s=612x612&w=0&k=20&c=Tls7PDwhSbA9aaVg0RkpfPfWYaQrfecN319aOCKuU34=" alt="Fotografía del expositor Juan Perez experto en aplicaciones web">
                 <h3>MSc. Juan Perez</h3>
                 <p>Especialista en Desarrollo de Aplicaciones Web y Ciencias de la Computación.</p>
             </aside>
-            <aside>
-                <img src="img/maria_gomez.jpg" alt="Fotografía de la expositora María Gómez, ingeniera informática">
+            <aside class="tarjeta-expositor">
+                <img class="foto-expositor" src="https://previews.123rf.com/images/instaphotos/instaphotos2208/instaphotos220800148/190531821-young-professional-leader-asian-business-woman-wearing-suit-vertical-portrait.jpg" alt="Fotografía de la expositora María Gómez, ingeniera informática">
                 <h3>Ing. María Gómez</h3>
                 <p>Experta en usabilidad, accesibilidad y experiencia de usuario (UX).</p>
             </aside>
@@ -58,7 +60,7 @@
             <!-- El formulario incluye validación de campos, como formato de correo electrónico, rango de edad permitido y campos obligatorios -->
             <form action="/procesar_inscripcion.php" method="POST">
                 
-                <div>
+                <div class="campo">
                     <label for="nombre">Nombre Completo:</label>
                     <input type="text" id="nombre" name="nombre" required pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+" title="Solo se permiten letras y espacios">
                 </div>
@@ -87,9 +89,9 @@
                     <textarea id="comentarios" name="comentarios" rows="4" cols="40" placeholder="Escriba aquí sus comentarios..."></textarea>
                 </div>
 
-                <div>
-                    <button type="submit">Enviar Inscripción</button>
-                    <button type="reset">Limpiar Formulario</button>
+                <div class="grupo-botones">
+                    <button class="boton-enviar" type="submit">Enviar Inscripción</button>
+                    <button class="boton-limpiar" type="reset">Limpiar Formulario</button>
                 </div>
             </form>
         </section>
@@ -98,7 +100,7 @@
     <!-- Footer con información de contacto, derechos de autor y enlaces a redes sociales de la institución -->
     <footer>
         <p>&copy; 2026 Universidad de Talca - Ingeniería en Informática Empresarial.</p>
-        <p>Contacto: soporte.eventos@institucion.cl</p>
+        <p>Contacto: vmena23@alumnos.utalca.cl</p>
     </footer>
 
 </body>

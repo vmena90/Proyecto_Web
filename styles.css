@@ -1,0 +1,242 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0f172a;
+    color: #e2e8f0;
+    line-height: 1.7;
+}
+
+/* Header con degradado de fondo */
+header {
+    background: linear-gradient(135deg, #1e1b4b, #312e81, #4338ca, #0e7490);
+    text-align: center;
+    padding: 60px 20px 40px;
+}
+
+header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+    color: white;
+}
+
+header p {
+    color: #94a3b8;
+    margin-bottom: 30px;
+}
+
+/* Navegación en fila con enlaces tipo píldora */
+.menu-navegacion {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.enlace-nav {
+    display: inline-block;
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-weight: bold;
+    color: #e2e8f0;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.enlace-nav:hover {
+    background: linear-gradient(135deg, #4f46e5, #06b6d4);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Contenedor principal centrado */
+main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+section {
+    margin-bottom: 60px;
+}
+
+section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    padding-bottom: 12px;
+    border-bottom: 4px solid #4f46e5;
+    display: inline-block;
+}
+
+/* Tarjetas de la agenda con efecto de vidrio */
+.jornada {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 28px 30px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.jornada:hover {
+    transform: translateY(-4px);
+}
+
+.jornada h3 {
+    color: #818cf8;
+    margin-bottom: 10px;
+}
+
+.jornada p {
+    color: #94a3b8;
+}
+
+.jornada p strong {
+    color: #e2e8f0;
+}
+
+/* Expositores en fila con flexbox */
+#expositores {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+#expositores h2 {
+    width: 100%;
+}
+
+.tarjeta-expositor {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 30px;
+    text-align: center;
+    flex: 1;
+    min-width: 250px;
+    transition: transform 0.3s ease;
+}
+
+.tarjeta-expositor:hover {
+    transform: translateY(-6px);
+}
+
+/* Foto circular del expositor */
+.foto-expositor {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 18px;
+    border: 3px solid #818cf8;
+    background: #334155;
+}
+
+.tarjeta-expositor p {
+    color: #94a3b8;
+}
+
+/* Sección de inscripción */
+#inscripcion {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 40px;
+}
+
+#inscripcion > p {
+    color: #94a3b8;
+    margin-bottom: 28px;
+}
+
+/* Formulario en columna */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+label {
+    font-weight: bold;
+    color: #e2e8f0;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px 16px;
+    background-color: #0f172a;
+    border: 1.5px solid #475569;
+    border-radius: 8px;
+    color: #e2e8f0;
+    font-family: Arial, sans-serif;
+    font-size: 0.95rem;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #818cf8;
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Botones del formulario */
+.grupo-botones {
+    display: flex;
+    gap: 14px;
+    margin-top: 8px;
+}
+
+.boton-enviar {
+    background: linear-gradient(90deg, #0ea5e9, #2563eb);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.boton-enviar:hover {
+    transform: translateY(-2px);
+}
+
+.boton-limpiar {
+    background: transparent;
+    color: #94a3b8;
+    border: 1.5px solid #475569;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Footer con línea divisoria */
+footer {
+    text-align: center;
+    padding: 35px 20px;
+    border-top: 1px solid #475569;
+    margin-top: 20px;
+}
+
+footer p {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    margin-bottom: 4px;
+}
