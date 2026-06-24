@@ -6,7 +6,7 @@
     <meta name="description" content="Plataforma institucional para la socialización de ferias, jornadas y congresos.">
     <title>Congreso Anual de Innovación - Evento Institucional</title>
     <link rel="stylesheet" href="styles.css">
-    script src="script.js" defer></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <!-- Header con título del evento, institución organizadora y menú de navegación -->
@@ -32,7 +32,7 @@
                 <p><strong>Lugar:</strong> Auditorio Principal</p>
                 <p>Apertura del congreso con charlas sobre nuevas tecnologías y adaptabilidad web.</p>
             </article>
-            <article>
+            <article class="jornada">
                 <h3>Jornada 2: Taller Práctico HTML5</h3>
                 <p><strong>Fecha:</strong> 16 de Octubre, 10:00 - 14:00 hrs.</p>
                 <p><strong>Lugar:</strong> Laboratorio de Computación A</p>
@@ -65,17 +65,17 @@
                     <input type="text" id="nombre" name="nombre" required pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+" title="Solo se permiten letras y espacios">
                 </div>
 
-                <div>
+                <div class="campo">
                     <label for="email">Correo Electrónico:</label>
                     <input type="email" id="email" name="email" required>
                 </div>
 
-                <div>
+                <div class="campo">
                     <label for="edad">Edad:</label>
                     <input type="number" id="edad" name="edad" min="18" max="99" required>
                 </div>
 
-                <div>
+                <div class="campo">
                     <label for="rol">Rol de Participación:</label>
                     <select id="rol" name="rol" required>
                         <option value="">Seleccione su rol...</option>
@@ -84,7 +84,7 @@
                     </select>
                 </div>
 
-                <div>
+                <div class="campo">
                     <label for="comentarios">Motivo de su participación / Temática si es expositor:</label>
                     <textarea id="comentarios" name="comentarios" rows="4" cols="40" placeholder="Escriba aquí sus comentarios..."></textarea>
                 </div>
@@ -97,7 +97,7 @@
         </section>
 
     </main>
-    <!-- Footer con información de contacto, derechos de autor y enlaces a redes sociales de la institución -->
+    <!-- Footer con informacion tipica -->
     <footer>
         <p>&copy; 2026 Universidad de Talca - Ingeniería en Informática Empresarial.</p>
         <p>Contacto: vmena23@alumnos.utalca.cl</p>

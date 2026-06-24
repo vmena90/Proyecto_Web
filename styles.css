@@ -67,12 +67,25 @@ section {
     margin-bottom: 60px;
 }
 
+/* Títulos de sección con línea decorativa posicionada debajo */
 section h2 {
     font-size: 1.8rem;
     margin-bottom: 30px;
     padding-bottom: 12px;
-    border-bottom: 4px solid #4f46e5;
     display: inline-block;
+    position: relative;
+}
+
+/* Pseudo-elemento posicionado de forma absoluta para crear la línea debajo del título */
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: #4f46e5;
+    border-radius: 2px;
 }
 
 /* Tarjetas de la agenda con efecto de vidrio */
@@ -100,6 +113,10 @@ section h2 {
 
 .jornada p strong {
     color: #e2e8f0;
+}
+
+.jornada:last-child {
+    margin-bottom: 0;
 }
 
 /* Expositores en fila con flexbox */
@@ -239,4 +256,32 @@ footer p {
     font-size: 0.85rem;
     color: #94a3b8;
     margin-bottom: 4px;
+}
+
+/* Diseño responsivo para pantallas pequeñas */
+@media (max-width: 768px) {
+    header {
+        padding: 40px 16px 30px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .menu-navegacion {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    main {
+        padding: 30px 16px;
+    }
+
+    #expositores {
+        flex-direction: column;
+    }
+
+    .grupo-botones {
+        flex-direction: column;
+    }
 }
