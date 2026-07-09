@@ -13,26 +13,34 @@
     <header>
         <h1>Congreso Anual de Innovación Tecnológica 2026</h1>
         <p>Universidad de Talca - Facultad de Economía y Negocios</p>
-        <nav>
-            <ul class="menu-navegacion">
-                <li><a class="enlace-nav" href="#agenda">Agenda de Actividades</a></li>
-                <li><a class="enlace-nav" href="#expositores">Perfil de Expositores</a></li>
-                <li><a class="enlace-nav" href="#inscripcion">Formulario de Inscripción</a></li>
-            </ul>
-        </nav>
     </header>
+    
+    <nav>
+        <ul class="menu-navegacion">
+            <li><a class="enlace-nav" href="#agenda">Agenda de Actividades</a></li>
+            <li><a class="enlace-nav" href="#expositores">Perfil de Expositores</a></li>
+            <li><a class="enlace-nav" href="#inscripcion">Formulario de Inscripción</a></li>
+        </ul>
+    </nav>
 
     <main>
         <!-- Sección de agenda con detalles de las actividades programadas, incluyendo fechas, horarios y lugares -->
         <section id="agenda">
             <h2>Agenda de Actividades</h2>
-            <article class="jornada">
+            
+            <div class="filtros-agenda">
+                <button class="boton-filtro activo" data-filtro="todos">Todos</button>
+                <button class="boton-filtro" data-filtro="dia1">Día 1</button>
+                <button class="boton-filtro" data-filtro="dia2">Día 2</button>
+            </div>
+
+            <article class="jornada" data-dia="dia1">
                 <h3>Jornada 1: El futuro de la Web</h3>
                 <p><strong>Fecha:</strong> 15 de Octubre, 09:00 - 13:00 hrs.</p>
                 <p><strong>Lugar:</strong> Auditorio Principal</p>
                 <p>Apertura del congreso con charlas sobre nuevas tecnologías y adaptabilidad web.</p>
             </article>
-            <article class="jornada">
+            <article class="jornada" data-dia="dia2">
                 <h3>Jornada 2: Taller Práctico HTML5</h3>
                 <p><strong>Fecha:</strong> 16 de Octubre, 10:00 - 14:00 hrs.</p>
                 <p><strong>Lugar:</strong> Laboratorio de Computación A</p>
@@ -45,12 +53,14 @@
             <aside class="tarjeta-expositor">
                 <img class="foto-expositor" src="https://media.istockphoto.com/id/1399565382/es/foto/joven-empresario-mestizo-feliz-de-pie-con-los-brazos-cruzados-trabajando-solo-en-una-oficina.jpg?s=612x612&w=0&k=20&c=Tls7PDwhSbA9aaVg0RkpfPfWYaQrfecN319aOCKuU34=" alt="Fotografía del expositor Juan Perez experto en aplicaciones web">
                 <h3>MSc. Juan Perez</h3>
-                <p>Especialista en Desarrollo de Aplicaciones Web y Ciencias de la Computación.</p>
+                <p>Especialista en Desarrollo de Aplicaciones Web.</p>
+                <button class="boton-perfil" data-nombre="MSc. Juan Perez" data-foto="https://media.istockphoto.com/id/1399565382/es/foto/joven-empresario-mestizo-feliz-de-pie-con-los-brazos-cruzados-trabajando-solo-en-una-oficina.jpg?s=612x612&w=0&k=20&c=Tls7PDwhSbA9aaVg0RkpfPfWYaQrfecN319aOCKuU34=" data-bio="Especialista en Desarrollo de Aplicaciones Web y Ciencias de la Computación, con más de 10 años de experiencia internacional impartiendo clases y liderando proyectos de innovación tecnológica. Autor de diversos artículos sobre rendimiento web.">Ver Perfil Completo</button>
             </aside>
             <aside class="tarjeta-expositor">
                 <img class="foto-expositor" src="https://previews.123rf.com/images/instaphotos/instaphotos2208/instaphotos220800148/190531821-young-professional-leader-asian-business-woman-wearing-suit-vertical-portrait.jpg" alt="Fotografía de la expositora María Gómez, ingeniera informática">
                 <h3>Ing. María Gómez</h3>
-                <p>Experta en usabilidad, accesibilidad y experiencia de usuario (UX).</p>
+                <p>Experta en usabilidad y accesibilidad (UX).</p>
+                <button class="boton-perfil" data-nombre="Ing. María Gómez" data-foto="https://previews.123rf.com/images/instaphotos/instaphotos2208/instaphotos220800148/190531821-young-professional-leader-asian-business-woman-wearing-suit-vertical-portrait.jpg" data-bio="Ingeniera civil informática experta en usabilidad, accesibilidad y experiencia de usuario (UX). Ha liderado auditorías de accesibilidad para corporaciones globales y promueve el diseño centrado en el ser humano en todas las plataformas digitales.">Ver Perfil Completo</button>
             </aside>
         </section>
         <!-- Sección de formulario de inscripción con campos para nombre, correo electrónico, edad, rol de participación y un área de texto para comentarios adicionales -->
@@ -94,6 +104,10 @@
                     <button class="boton-limpiar" type="reset">Limpiar Formulario</button>
                 </div>
             </form>
+            
+            <div id="mensaje-exito" class="oculto">
+                <!-- Aquí se inyectará el mensaje con JS -->
+            </div>
         </section>
 
     </main>
@@ -103,5 +117,14 @@
         <p>Contacto: vmena23@alumnos.utalca.cl</p>
     </footer>
 
+    <!-- Ventana Modal para Expositores (oculta por defecto) -->
+    <div id="modal-expositor" class="modal oculto">
+        <div class="modal-contenido">
+            <span class="cerrar-modal" id="btn-cerrar-modal">&times;</span>
+            <img id="modal-foto" class="foto-expositor" src="" alt="Foto expositor">
+            <h3 id="modal-nombre"></h3>
+            <p id="modal-bio"></p>
+        </div>
+    </div>
 </body>
 </html>
